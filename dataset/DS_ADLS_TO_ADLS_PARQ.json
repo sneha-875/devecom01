@@ -1,0 +1,44 @@
+{
+	"name": "DS_ADLS_TO_ADLS_PARQ",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_TO_ADLS_ARQ_IP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "payments.csv",
+				"fileSystem": "manual"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "String"
+			},
+			{
+				"name": "payment_sequential",
+				"type": "String"
+			},
+			{
+				"name": "payment_type",
+				"type": "String"
+			},
+			{
+				"name": "payment_installments",
+				"type": "String"
+			},
+			{
+				"name": "payment_value",
+				"type": "String"
+			}
+		]
+	}
+}
