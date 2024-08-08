@@ -1,0 +1,24 @@
+{
+	"name": "EVENT_TRI_MANUAL_FILE",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_ADLS_TO_PARQ",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/manual/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/fe99f6bb-9115-4d42-a813-a4d0f6c388bf/resourceGroups/Viosionboardpeoject-ressourcegp/providers/Microsoft.Storage/storageAccounts/rawadlsmaya",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
