@@ -1,0 +1,24 @@
+{
+	"name": "SQL_TO_TRIGGER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_SQL_TO_PAR",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-08-09T10:31:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
