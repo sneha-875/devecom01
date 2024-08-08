@@ -1,0 +1,12 @@
+{
+	"name": "LS_RestService_TO_PARQ",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://retoolapi.dev/rUgZjN/data",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
