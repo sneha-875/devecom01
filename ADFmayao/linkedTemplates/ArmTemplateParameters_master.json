@@ -14,6 +14,15 @@
 		"LS_ADLS_PARQ_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_TO_ADLS_ARQ_IP_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_TO_PARQ_accountKey": {
+			"value": ""
+		},
 		"LS_CSV_TO_PAR_INPUT_accountKey": {
 			"value": ""
 		},
@@ -30,6 +39,9 @@
 			"value": ""
 		},
 		"LS_RESTAPI_TOPAR_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_REST_ADLS_accountKey": {
 			"value": ""
 		},
 		"LS_SINK_PARQUET_accountKey": {
@@ -59,9 +71,6 @@
 		"linkedService2_connectionString": {
 			"value": ""
 		},
-		"LS_REST_ADLS_accountKey": {
-			"value": ""
-		},
 		"ADLS2_SINK_PAR_properties_typeProperties_url": {
 			"value": "https://siaslsmaya.dfs.core.windows.net/"
 		},
@@ -76,6 +85,15 @@
 		},
 		"LS_ADLS_PARQ_properties_typeProperties_url": {
 			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TO_ADLS_ARQ_IP_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TO_PARQ_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
 		},
 		"LS_CSV_TO_PAR_INPUT_properties_typeProperties_url": {
 			"value": "https://rawadlsmaya.dfs.core.windows.net/"
@@ -96,6 +114,12 @@
 			"value": "https://rawadlsmaya.dfs.core.windows.net/"
 		},
 		"LS_RESTAPI_TO_PAR_INPUT_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/rUgZjN/data"
+		},
+		"LS_REST_ADLS_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
+		},
+		"LS_RestService_TO_PARQ_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/rUgZjN/data"
 		},
 		"LS_SINK_PARQUET_properties_typeProperties_url": {
@@ -143,11 +167,8 @@
 		"LS_SqlServer_properties_typeProperties_userName": {
 			"value": "sa"
 		},
-		"LS_RestService_TO_PARQ_properties_typeProperties_url": {
-			"value": "https://retoolapi.dev/rUgZjN/data"
-		},
-		"LS_REST_ADLS_properties_typeProperties_url": {
-			"value": "https://siaslsmaya.dfs.core.windows.net/"
+		"EVENT_TRI_MANUAL_FILE_properties_typeProperties_scope": {
+			"value": "/subscriptions/fe99f6bb-9115-4d42-a813-a4d0f6c388bf/resourceGroups/Viosionboardpeoject-ressourcegp/providers/Microsoft.Storage/storageAccounts/rawadlsmaya"
 		},
 		"containerUri": {
 			"value": ""

@@ -19,6 +19,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARQ'"
 		},
+		"LS_ADLS_TO_ADLS_ARQ_IP_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_TO_ADLS_ARQ_IP'"
+		},
+		"LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_TO_ADLS_MANUAL_TO_PARQ'"
+		},
+		"LS_ADLS_TO_PARQ_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_TO_PARQ'"
+		},
 		"LS_CSV_TO_PAR_INPUT_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_TO_PAR_INPUT'"
@@ -42,6 +54,10 @@
 		"LS_RESTAPI_TOPAR_OUTPUT_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_TOPAR_OUTPUT'"
+		},
+		"LS_REST_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_ADLS'"
 		},
 		"LS_SINK_PARQUET_accountKey": {
 			"type": "secureString",
@@ -79,10 +95,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'linkedService2'"
 		},
-		"LS_REST_ADLS_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_REST_ADLS'"
-		},
 		"ADLS2_SINK_PAR_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://siaslsmaya.dfs.core.windows.net/"
@@ -102,6 +114,18 @@
 		"LS_ADLS_PARQ_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TO_ADLS_ARQ_IP_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TO_PARQ_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://siaslsmaya.dfs.core.windows.net/"
 		},
 		"LS_CSV_TO_PAR_INPUT_properties_typeProperties_url": {
 			"type": "string",
@@ -128,6 +152,14 @@
 			"defaultValue": "https://rawadlsmaya.dfs.core.windows.net/"
 		},
 		"LS_RESTAPI_TO_PAR_INPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/rUgZjN/data"
+		},
+		"LS_REST_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://siaslsmaya.dfs.core.windows.net/"
+		},
+		"LS_RestService_TO_PARQ_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://retoolapi.dev/rUgZjN/data"
 		},
@@ -191,13 +223,9 @@
 			"type": "string",
 			"defaultValue": "sa"
 		},
-		"LS_RestService_TO_PARQ_properties_typeProperties_url": {
+		"EVENT_TRI_MANUAL_FILE_properties_typeProperties_scope": {
 			"type": "string",
-			"defaultValue": "https://retoolapi.dev/rUgZjN/data"
-		},
-		"LS_REST_ADLS_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://siaslsmaya.dfs.core.windows.net/"
+			"defaultValue": "/subscriptions/fe99f6bb-9115-4d42-a813-a4d0f6c388bf/resourceGroups/Viosionboardpeoject-ressourcegp/providers/Microsoft.Storage/storageAccounts/rawadlsmaya"
 		},
 		"containerUri": {
 			"type": "string",
@@ -232,6 +260,15 @@
 					"LS_ADLS_PARQ_accountKey": {
 						"value": "[parameters('LS_ADLS_PARQ_accountKey')]"
 					},
+					"LS_ADLS_TO_ADLS_ARQ_IP_accountKey": {
+						"value": "[parameters('LS_ADLS_TO_ADLS_ARQ_IP_accountKey')]"
+					},
+					"LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_accountKey": {
+						"value": "[parameters('LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_accountKey')]"
+					},
+					"LS_ADLS_TO_PARQ_accountKey": {
+						"value": "[parameters('LS_ADLS_TO_PARQ_accountKey')]"
+					},
 					"LS_CSV_TO_PAR_INPUT_accountKey": {
 						"value": "[parameters('LS_CSV_TO_PAR_INPUT_accountKey')]"
 					},
@@ -250,6 +287,9 @@
 					"LS_RESTAPI_TOPAR_OUTPUT_accountKey": {
 						"value": "[parameters('LS_RESTAPI_TOPAR_OUTPUT_accountKey')]"
 					},
+					"LS_REST_ADLS_accountKey": {
+						"value": "[parameters('LS_REST_ADLS_accountKey')]"
+					},
 					"LS_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_SINK_PARQUET_accountKey')]"
 					},
@@ -259,20 +299,20 @@
 					"linkedService2_connectionString": {
 						"value": "[parameters('linkedService2_connectionString')]"
 					},
-					"LS_REST_ADLS_accountKey": {
-						"value": "[parameters('LS_REST_ADLS_accountKey')]"
-					},
-					"LSS_SqlServer_password": {
-						"value": "[parameters('LSS_SqlServer_password')]"
-					},
-					"LS_SQLL_PARR_accountKey": {
-						"value": "[parameters('LS_SQLL_PARR_accountKey')]"
-					},
 					"ADLS2_SINK_PAR_properties_typeProperties_url": {
 						"value": "[parameters('ADLS2_SINK_PAR_properties_typeProperties_url')]"
 					},
 					"LS_ADLS_PARQ_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_PARQ_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_TO_ADLS_ARQ_IP_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_TO_ADLS_ARQ_IP_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_TO_ADLS_MANUAL_TO_PARQ_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_TO_PARQ_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_TO_PARQ_properties_typeProperties_url')]"
 					},
 					"LS_CSV_TO_PAR_INPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_TO_PAR_INPUT_properties_typeProperties_url')]"
@@ -295,26 +335,14 @@
 					"LS_RESTAPI_TO_PAR_INPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_RESTAPI_TO_PAR_INPUT_properties_typeProperties_url')]"
 					},
-					"LS_SINK_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_SINK_PARQUET_properties_typeProperties_url')]"
+					"LS_REST_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_ADLS_properties_typeProperties_url')]"
 					},
 					"LS_RestService_TO_PARQ_properties_typeProperties_url": {
 						"value": "[parameters('LS_RestService_TO_PARQ_properties_typeProperties_url')]"
 					},
-					"LS_REST_ADLS_properties_typeProperties_url": {
-						"value": "[parameters('LS_REST_ADLS_properties_typeProperties_url')]"
-					},
-					"LSS_SqlServer_properties_typeProperties_server": {
-						"value": "[parameters('LSS_SqlServer_properties_typeProperties_server')]"
-					},
-					"LSS_SqlServer_properties_typeProperties_database": {
-						"value": "[parameters('LSS_SqlServer_properties_typeProperties_database')]"
-					},
-					"LSS_SqlServer_properties_typeProperties_userName": {
-						"value": "[parameters('LSS_SqlServer_properties_typeProperties_userName')]"
-					},
-					"LS_SQLL_PARR_properties_typeProperties_url": {
-						"value": "[parameters('LS_SQLL_PARR_properties_typeProperties_url')]"
+					"LS_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SINK_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -334,6 +362,12 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LSS_SqlServer_password": {
+						"value": "[parameters('LSS_SqlServer_password')]"
+					},
+					"LS_SQLL_PARR_accountKey": {
+						"value": "[parameters('LS_SQLL_PARR_accountKey')]"
+					},
 					"LS_SQL_LL_password": {
 						"value": "[parameters('LS_SQL_LL_password')]"
 					},
@@ -348,6 +382,18 @@
 					},
 					"LS_SqlServer_password": {
 						"value": "[parameters('LS_SqlServer_password')]"
+					},
+					"LSS_SqlServer_properties_typeProperties_server": {
+						"value": "[parameters('LSS_SqlServer_properties_typeProperties_server')]"
+					},
+					"LSS_SqlServer_properties_typeProperties_database": {
+						"value": "[parameters('LSS_SqlServer_properties_typeProperties_database')]"
+					},
+					"LSS_SqlServer_properties_typeProperties_userName": {
+						"value": "[parameters('LSS_SqlServer_properties_typeProperties_userName')]"
+					},
+					"LS_SQLL_PARR_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQLL_PARR_properties_typeProperties_url')]"
 					},
 					"LS_SQL_LL_properties_typeProperties_server": {
 						"value": "[parameters('LS_SQL_LL_properties_typeProperties_server')]"
@@ -387,11 +433,34 @@
 					},
 					"LS_SqlServer_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SqlServer_properties_typeProperties_userName')]"
+					},
+					"EVENT_TRI_MANUAL_FILE_properties_typeProperties_scope": {
+						"value": "[parameters('EVENT_TRI_MANUAL_FILE_properties_typeProperties_scope')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ADFmayao_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADFmayao_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADFmayao_ArmTemplate_1')]"
 			]
 		}
 	]
