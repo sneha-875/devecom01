@@ -1,0 +1,19 @@
+{
+	"name": "DS_SQLL_PARP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLL_PARR",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "desdata1"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
