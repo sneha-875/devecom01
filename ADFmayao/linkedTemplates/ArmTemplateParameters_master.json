@@ -1,0 +1,150 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFmayao"
+		},
+		"ADLS2_SINK_PAR_accountKey": {
+			"value": ""
+		},
+		"LSS_SqlServer_password": {
+			"value": ""
+		},
+		"LS_ADLS_PARQ_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_TO_PAR_INPUT_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_TO_PAR_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_TO_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_TO_CSVV_INPUT_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_TO_CSV_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_RESTAPI_TOPAR_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SQLL_PARR_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_LL_password": {
+			"value": ""
+		},
+		"LS_SQL_SYSTEM_password": {
+			"value": ""
+		},
+		"LS_SQL_SYSTEM_PAR_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_TO_PARRR_password": {
+			"value": ""
+		},
+		"LS_SqlServer_password": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
+			"value": ""
+		},
+		"linkedService2_connectionString": {
+			"value": ""
+		},
+		"ADLS2_SINK_PAR_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
+		},
+		"LSS_SqlServer_properties_typeProperties_server": {
+			"value": "DESKTOP-IHSFEQB\\SQLEXPRESS"
+		},
+		"LSS_SqlServer_properties_typeProperties_database": {
+			"value": "salesecom"
+		},
+		"LSS_SqlServer_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_ADLS_PARQ_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_CSV_TO_PAR_INPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_CSV_TO_PAR_OUTPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_JSON_TO_CSV_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_JSON_TO_CSVV_INPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_JSON_TO_CSV_OUTPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_TOPAR_OUTPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_TO_PAR_INPUT_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/rUgZjN/data"
+		},
+		"LS_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
+		},
+		"LS_SQLL_PARR_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
+		},
+		"LS_SQL_LL_properties_typeProperties_server": {
+			"value": "DESKTOP-IHSFEQB\\SQLEXPRESS"
+		},
+		"LS_SQL_LL_properties_typeProperties_database": {
+			"value": "salesecom"
+		},
+		"LS_SQL_LL_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQL_SYSTEM_properties_typeProperties_server": {
+			"value": "DESKTOP-IHSFEQB\\SQLEXPRESS"
+		},
+		"LS_SQL_SYSTEM_properties_typeProperties_database": {
+			"value": "salesecom"
+		},
+		"LS_SQL_SYSTEM_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQL_SYSTEM_PAR_OUTPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_SQL_TO_PARRR_properties_typeProperties_server": {
+			"value": "DESKTOP-IHSFEQB\\MONICA"
+		},
+		"LS_SQL_TO_PARRR_properties_typeProperties_database": {
+			"value": "salesecom"
+		},
+		"LS_SQL_TO_PARRR_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SqlServer_properties_typeProperties_server": {
+			"value": "DESKTOP-IHSFEQB\\SQLEXPRESS"
+		},
+		"LS_SqlServer_properties_typeProperties_database": {
+			"value": "salesecom"
+		},
+		"LS_SqlServer_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
