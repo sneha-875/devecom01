@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADFmayao"
 		},
+		"DS_BLOB_TO_siADLS_INPUT_accountKey": {
+			"value": ""
+		},
 		"LS_REST_API_PAR_OUTPUT_accountKey": {
 			"value": ""
 		},
@@ -13,6 +16,18 @@
 		},
 		"LS_SQL_TO_PAR_INPUT_password": {
 			"value": ""
+		},
+		"LS_rawADLS_TO_siADLS_INPUT_accountKey": {
+			"value": ""
+		},
+		"LS_BLOB_TO_ADLS_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_TO_ADLS_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"DS_BLOB_TO_siADLS_INPUT_properties_typeProperties_url": {
+			"value": "https://ecomblobstmaya.dfs.core.windows.net/"
 		},
 		"LS_REST_API_PAR_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/na0qgS/data"
@@ -31,6 +46,12 @@
 		},
 		"LS_SQL_TO_PAR_INPUT_properties_typeProperties_userName": {
 			"value": "sa"
+		},
+		"LS_rawADLS_TO_siADLS_INPUT_properties_typeProperties_url": {
+			"value": "https://rawadlsmaya.dfs.core.windows.net/"
+		},
+		"LS_BLOB_TO_ADLS_OUTPUT_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
 		}
 	}
 }
