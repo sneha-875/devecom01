@@ -1,0 +1,19 @@
+{
+	"name": "DS_SQL_PAR_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_PAR_PUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "order"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
