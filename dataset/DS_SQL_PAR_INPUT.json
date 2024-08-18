@@ -5,6 +5,9 @@
 			"referenceName": "LS_SQL_TO_PAR_INPUT",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "DS-ON-PRE-SQL"
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [

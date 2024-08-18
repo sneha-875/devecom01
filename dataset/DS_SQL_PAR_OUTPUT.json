@@ -5,6 +5,9 @@
 			"referenceName": "LS_SQL_PAR_PUTPUT",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "DS-ON-PRE-SQL"
+		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
