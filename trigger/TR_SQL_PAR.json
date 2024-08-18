@@ -1,0 +1,24 @@
+{
+	"name": "TR_SQL_PAR",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_SQL_PAR",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-08-19T20:35:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
