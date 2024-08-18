@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFmayao"
 		},
+		"LS_REST_API_PAR_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_API_PAR_OUTPUT'"
+		},
 		"LS_SQL_PAR_PUTPUT_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_PAR_PUTPUT'"
@@ -14,6 +18,14 @@
 		"LS_SQL_TO_PAR_INPUT_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SQL_TO_PAR_INPUT'"
+		},
+		"LS_REST_API_PAR_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/na0qgS/data"
+		},
+		"LS_REST_API_PAR_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://siaslsmaya.dfs.core.windows.net/"
 		},
 		"LS_SQL_PAR_PUTPUT_properties_typeProperties_url": {
 			"type": "string",
@@ -58,11 +70,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_REST_API_PAR_OUTPUT_accountKey": {
+						"value": "[parameters('LS_REST_API_PAR_OUTPUT_accountKey')]"
+					},
 					"LS_SQL_PAR_PUTPUT_accountKey": {
 						"value": "[parameters('LS_SQL_PAR_PUTPUT_accountKey')]"
 					},
 					"LS_SQL_TO_PAR_INPUT_password": {
 						"value": "[parameters('LS_SQL_TO_PAR_INPUT_password')]"
+					},
+					"LS_REST_API_PAR_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_API_PAR_properties_typeProperties_url')]"
+					},
+					"LS_REST_API_PAR_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_API_PAR_OUTPUT_properties_typeProperties_url')]"
 					},
 					"LS_SQL_PAR_PUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQL_PAR_PUTPUT_properties_typeProperties_url')]"

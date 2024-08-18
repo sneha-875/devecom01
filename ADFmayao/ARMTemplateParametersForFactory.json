@@ -5,11 +5,20 @@
 		"factoryName": {
 			"value": "ADFmayao"
 		},
+		"LS_REST_API_PAR_OUTPUT_accountKey": {
+			"value": ""
+		},
 		"LS_SQL_PAR_PUTPUT_accountKey": {
 			"value": ""
 		},
 		"LS_SQL_TO_PAR_INPUT_password": {
 			"value": ""
+		},
+		"LS_REST_API_PAR_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/na0qgS/data"
+		},
+		"LS_REST_API_PAR_OUTPUT_properties_typeProperties_url": {
+			"value": "https://siaslsmaya.dfs.core.windows.net/"
 		},
 		"LS_SQL_PAR_PUTPUT_properties_typeProperties_url": {
 			"value": "https://siaslsmaya.dfs.core.windows.net/"

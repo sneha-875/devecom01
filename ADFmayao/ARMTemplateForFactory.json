@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFmayao"
 		},
+		"LS_REST_API_PAR_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_API_PAR_OUTPUT'"
+		},
 		"LS_SQL_PAR_PUTPUT_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_PAR_PUTPUT'"
@@ -14,6 +18,14 @@
 		"LS_SQL_TO_PAR_INPUT_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SQL_TO_PAR_INPUT'"
+		},
+		"LS_REST_API_PAR_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/na0qgS/data"
+		},
+		"LS_REST_API_PAR_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://siaslsmaya.dfs.core.windows.net/"
 		},
 		"LS_SQL_PAR_PUTPUT_properties_typeProperties_url": {
 			"type": "string",
@@ -36,6 +48,71 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/PL_REST_API_PAR')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "RestSource",
+								"httpRequestTimeout": "00:01:40",
+								"requestInterval": "00.00:00:00.010",
+								"requestMethod": "GET",
+								"paginationRules": {
+									"supportRFC5988": "true"
+								}
+							},
+							"sink": {
+								"type": "ParquetSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "ParquetWriteSettings"
+								}
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_REST_API_PAR",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_REST_API_PAR_OUTPUT",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_REST_API_PAR')]",
+				"[concat(variables('factoryId'), '/datasets/DS_REST_API_PAR_OUTPUT')]"
+			]
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PL_SQL_PAR')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -106,6 +183,54 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_API_PAR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_REST_API_PAR",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "DS-REST-API"
+				},
+				"annotations": [],
+				"type": "RestResource",
+				"typeProperties": {},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_REST_API_PAR')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_REST_API_PAR_OUTPUT')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_REST_API_PAR_OUTPUT",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "DS-REST-API"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "customer"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_REST_API_PAR_OUTPUT')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DS_SQL_PAR_INPUT')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -113,6 +238,9 @@
 				"linkedServiceName": {
 					"referenceName": "LS_SQL_TO_PAR_INPUT",
 					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "DS-ON-PRE-SQL"
 				},
 				"annotations": [],
 				"type": "SqlServerTable",
@@ -164,6 +292,9 @@
 					"referenceName": "LS_SQL_PAR_PUTPUT",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "DS-ON-PRE-SQL"
+				},
 				"annotations": [],
 				"type": "Parquet",
 				"typeProperties": {
@@ -178,6 +309,38 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_SQL_PAR_PUTPUT')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_REST_API_PAR')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "RestService",
+				"typeProperties": {
+					"url": "[parameters('LS_REST_API_PAR_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_REST_API_PAR_OUTPUT')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_REST_API_PAR_OUTPUT_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_REST_API_PAR_OUTPUT_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_SQL_PAR_PUTPUT')]",
@@ -225,6 +388,36 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/TR_REST_API_PAR')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL_REST_API_PAR",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2024-08-19T21:15:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL_REST_API_PAR')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/TR_SQL_PAR')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -246,8 +439,7 @@
 						"frequency": "Day",
 						"interval": 1,
 						"startTime": "2024-08-18T20:55:00",
-						"timeZone": "India Standard Time",
-						"schedule": {}
+						"timeZone": "India Standard Time"
 					}
 				}
 			},
