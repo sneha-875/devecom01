@@ -1,0 +1,47 @@
+{
+	"name": "DS_BLOB_TO_ADLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB_TO_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "blob_to_adls"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "payments.csv",
+				"container": "manual-file-payment"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "String"
+			},
+			{
+				"name": "payment_sequential",
+				"type": "String"
+			},
+			{
+				"name": "payment_type",
+				"type": "String"
+			},
+			{
+				"name": "payment_installments",
+				"type": "String"
+			},
+			{
+				"name": "payment_value",
+				"type": "String"
+			}
+		]
+	}
+}

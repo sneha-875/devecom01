@@ -1,0 +1,22 @@
+{
+	"name": "DS_BLOB_TO_ADLS_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BLOB_TO_ADLS_OUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "blob_to_adls"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "payments"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
