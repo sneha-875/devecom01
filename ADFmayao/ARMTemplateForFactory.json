@@ -245,8 +245,9 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2024-08-19T20:35:00",
-						"timeZone": "India Standard Time"
+						"startTime": "2024-08-18T20:55:00",
+						"timeZone": "India Standard Time",
+						"schedule": {}
 					}
 				}
 			},
