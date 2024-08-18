@@ -1,0 +1,22 @@
+{
+	"name": "DS_REST_API_PAR_OUTPUT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_API_PAR_OUTPUT",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS-REST-API"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "customer"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "DS_REST_API_PAR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_API_PAR",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS-REST-API"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
